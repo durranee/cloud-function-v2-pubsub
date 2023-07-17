@@ -1,4 +1,4 @@
-# cloud-function-v2-pubsub
+# Gen2 Cloud function Pubsub
 
 *Create pubsub topic*
 ```shell
@@ -28,3 +28,7 @@ gcloud pubsub topics publish my-topic --message="World"
 ```shell
 gcloud beta functions logs read my-pubsub-function --gen2
 ```
+
+*Prerequisite*
+
+Gcloud
