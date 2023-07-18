@@ -1,11 +1,11 @@
 # Gen2 Cloud function Pubsub
 
-*Create pubsub topic*
+**Create pubsub topic**
 ```shell
 gcloud pubsub topics create my-pubsub-topic
 ```
 
-*Deploy function*
+**Deploy function**
 
 ```shell
 gcloud functions deploy my-pubsub-function \
@@ -17,18 +17,23 @@ gcloud functions deploy my-pubsub-function \
     --trigger-topic=my-pubsub-topic
 ```
 
-*Trigger the function*
+**Trigger the function to pass**  
+*function will run and print the greeting*
 ```shell
 gcloud pubsub topics publish my-topic --message="World"
-
 ```
 
-*Read logs*
+**Trigger the function to fail**  
+*this will cause the code to raise an uncaught exception and exit the function*
+```shell
+gcloud pubsub topics publish my-topic --message="fail"
+```
 
+**Read logs**
 ```shell
 gcloud beta functions logs read my-pubsub-function --gen2
 ```
 
-*Prerequisite*
-
-Gcloud
+**Prerequisite**  
+Gcloud  
+Python 3.10
