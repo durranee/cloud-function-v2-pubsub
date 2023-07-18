@@ -1,5 +1,7 @@
 # Gen2 Cloud function Pubsub
 
+This simple cloud function gets triggered on a pubsub message and prints a greeting. If the message passed is "fail", the function code will raise an exception which will force the function to exit ungracefully.   
+
 **Create pubsub topic**
 ```shell
 gcloud pubsub topics create my-pubsub-topic
